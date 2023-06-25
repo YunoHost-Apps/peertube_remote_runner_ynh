@@ -38,10 +38,6 @@ ram.runtime = "500M"
     type = "user"
 
 [resources]
-        [resources.sources.main]
-        url = "https://github.com/Chocobozzz/PeerTube/releases/download/v5.2.0/peertube-v5.2.0.tar.xz"
-        sha256 = "42ed1f54cc2da810ceacc5c463c33c99d38d353ba6c055a2322be62d98131b88"
-        autoupdate.strategy = "latest_github_tag"
 
     [resources.ports]
     main.exposed = "TCP" #FIXME
@@ -57,6 +53,8 @@ ram.runtime = "500M"
     main.url = "/"
 
     [resources.apt]
+    packages = "ffmpeg"
+    
     extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
     extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
     extras.yarn.packages = "yarn"
