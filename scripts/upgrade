@@ -42,6 +42,8 @@ ynh_script_progression --message="Upgrading system configurations related to $ap
 
 # This should be a literal copypasta of what happened in the install's "System configuration" section
 
+ynh_add_nginx_config
+
 ynh_add_systemd_config
 
 yunohost service add $app --description="Peertube remote runner" --log="/var/log/$app/$app.log"
