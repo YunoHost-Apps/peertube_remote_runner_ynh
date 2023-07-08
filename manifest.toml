@@ -39,6 +39,7 @@ ram.runtime = "1000M"
     
     [install.runner_url]
     type = "string"
+    
     [install.runner_token]
     type = "string"
 
