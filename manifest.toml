@@ -53,7 +53,7 @@ ram.runtime = "1000M"
     main.url = "/"
 
     [resources.apt]
-    packages = "ffmpeg"
+    packages = "ffmpeg ffprobe"
     
     extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
     extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
