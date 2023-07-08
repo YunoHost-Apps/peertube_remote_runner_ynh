@@ -13,7 +13,7 @@ source /usr/share/yunohost/helpers
 # RUNNER REGISTRATION
 #=================================================
 
-ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_npm peertube-runner unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$(hostname)
+ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node peertube-runner unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$(hostname)
 
 #=================================================
 # REMOVE SYSTEM CONFIGURATIONS
