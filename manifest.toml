@@ -44,9 +44,6 @@ ram.runtime = "1000M"
 
 [resources]
 
-    [resources.ports]
-    main.exposed = "TCP" #FIXME
-
     [resources.system_user]
 
     [resources.install_dir]
