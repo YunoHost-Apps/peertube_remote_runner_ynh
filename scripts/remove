@@ -10,6 +10,12 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
+# RUNNER REGISTRATION
+#=================================================
+
+peertube-runner unregister --url runner_url --registration-token runner_token --runner-name $app$(hostname)
+
+#=================================================
 # REMOVE SYSTEM CONFIGURATIONS
 #=================================================
 # REMOVE SYSTEMD SERVICE 
