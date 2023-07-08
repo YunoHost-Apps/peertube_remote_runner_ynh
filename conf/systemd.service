@@ -1,15 +1,20 @@
 [Unit]
-Description=Small description of the service
+Description=PeerTube Remote Runner daemon
 After=network.target
 
 [Service]
 Type=simple
+Environment=NODE_ENV=production
+Environment=NODE_CONFIG_DIR=__INSTALL_DIR__/config
+Environment="__YNH_NODE_LOAD_PATH__"
 User=__APP__
 Group=__APP__
+ExecStart=__YNH_NODE__ __INSTALL_DIR__/peertube-runner server
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/script
-StandardOutput=append:/var/log/__APP__/__APP__.log
-StandardError=inherit
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=__APP__
+Restart=always
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
@@ -17,21 +22,18 @@ StandardError=inherit
 # Details for these options: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
 NoNewPrivileges=yes
 PrivateTmp=yes
-PrivateDevices=yes
+#PrivateDevices=yes
 RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
 RestrictNamespaces=yes
 RestrictRealtime=yes
 DevicePolicy=closed
-ProtectClock=yes
-ProtectHostname=yes
-ProtectProc=invisible
+DeviceAllow=/dev/dri/renderD128
 ProtectSystem=full
 ProtectControlGroups=yes
 ProtectKernelModules=yes
 ProtectKernelTunables=yes
 LockPersonality=yes
-SystemCallArchitectures=native
-SystemCallFilter=~@clock @debug @module @mount @obsolete @reboot @setuid @swap @cpu-emulation @privileged
+SystemCallFilter=~@clock @debug @module @mount @obsolete @reboot @setuid @swap
 
 # Denying access to capabilities that should not be relevant for webapps
 # Doc: https://man7.org/linux/man-pages/man7/capabilities.7.html
