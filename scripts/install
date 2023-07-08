@@ -66,7 +66,7 @@ ynh_script_progression --message="Registering the runner on Peertube server..." 
 
 pushd "$install_dir"
   ynh_use_nodejs
-  ynh_exec_as $app echo $(ls -a "$install_dir/")
+  ynh_exec_warn ynh_exec_as  $app echo $(ls -a "$install_dir/")
   ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/nodes_modules/.bin/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$(hostname)
 popd
 
