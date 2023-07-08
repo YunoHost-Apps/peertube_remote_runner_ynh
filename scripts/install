@@ -63,7 +63,7 @@ ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$ap
 # RUNNER REGISTRATION
 #=================================================
 
-ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_npm peertube-runner register --url runner_url --registration-token runner_token --runner-name $app_$(hostname)
+ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_npm peertube-runner register --url peertube_url --registration-token runner_token --runner-name $app_$(hostname)
 
 #=================================================
 # END OF SCRIPT
