@@ -63,8 +63,6 @@ ynh_script_progression --message="Registering the runner on Peertube server..." 
 
 runner_id = ynh_string_random --length=5 --filter='0-9'
 ynh_app_setting_set --app=$app --key='runner_id' --value=$runner_id
-ynh_app_setting_delete --app=$app --key='runner_id'
-ynh_app_setting_get --app=$app --key=runner_id
 
 pushd "$install_dir"
   ynh_use_nodejs
