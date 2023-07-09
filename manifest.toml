@@ -30,18 +30,26 @@ ram.runtime = "1000M"
     type = "domain"
     full_domain = false
 
+    [install.path]
+    type = "path"
+    default = "/peertube_runner"
+
     [install.init_main_permission]
     type = "group"
-    default = "visitors"
+    default = "admins"
+    help = "It doesn't need to be accessible to anyone. Use 'admins'."
 
     [install.admin]
     type = "user"
     
     [install.peertube_url]
     type = "string"
+    help = "You need to include 'https://' in the URL"
+    default = "https://"
     
     [install.runner_token]
     type = "string"
+    help = "Token generated from Peertube web admin UI"
 
 [resources]
 
