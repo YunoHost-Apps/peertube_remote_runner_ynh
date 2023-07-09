@@ -19,17 +19,17 @@ ynh_script_progression --message="Stopping a systemd service..." --weight=1
 ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
 
 #=================================================
-# MODIFY URL IN NGINX CONF
-#=================================================
-ynh_script_progression --message="Updating NGINX web server configuration..." --weight=1
-
-ynh_change_url_nginx_config
-
-#=================================================
 # SPECIFIC MODIFICATIONS
 #=================================================
-# ...
+# CHANGE REMOTE RUNNER URL INSIDE PEERTUBE
 #=================================================
+ynh_script_progression --message="Removing the runner from Peertube, registering it with the new URL and name..." --weight=1
+
+pushd "$install_dir"
+  ynh_use_nodejs
+  ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$(hostname)
+  ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$(hostname)
+popd
 
 #=================================================
 # GENERIC FINALISATION
