@@ -16,7 +16,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Ceci est une fausse description des fonctionalités de l'app
+Un *runner* distant pour décharger le travail intense en ressources (comme le transcodage) d'un serveur PeerTube principal distant.
 
 
 **Version incluse :** 1.0~ynh1
