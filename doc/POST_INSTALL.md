@@ -4,4 +4,4 @@ The app install dir is `__INSTALL_DIR__`.
 
 The app id is `__ID__`.
 
-You now need to setup your Peertube server to use that remote runner for transcoding and so on : https://docs.joinpeertube.org/admin/remote-runners
+You now need to setup your Peertube server to use that remote runner for transcoding and so on : https://docs.joinpeertube.org/admin/remote-runners#enable-remote-runners
