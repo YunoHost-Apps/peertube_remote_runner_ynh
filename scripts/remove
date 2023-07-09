@@ -14,7 +14,9 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Unregistering the runner on Peertube server..." --weight=1
 
-ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$(hostname)
+runner_id = ynh_app_setting_get --app=$app --key=runner_id
+
+ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
 
 #=================================================
 # REMOVE SYSTEM CONFIGURATIONS
