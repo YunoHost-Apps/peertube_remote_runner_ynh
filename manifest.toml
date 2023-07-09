@@ -37,7 +37,7 @@ ram.runtime = "1000M"
     [install.admin]
     type = "user"
     
-    [install.runner_url]
+    [install.peertube_url]
     type = "string"
     
     [install.runner_token]

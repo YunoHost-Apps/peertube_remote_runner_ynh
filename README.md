@@ -16,15 +16,10 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-This is a dummy description of this app features
+Remote runner to offload heavy workloads jobs (such as transcoding) from one or several (distant) Peertube server.
 
 
 **Shipped version:** 1.0~ynh1
-
-## Screenshots
-
-![Screenshot of PeerTube Remote Runner](./doc/screenshots/example.jpg)
-
 ## Documentation and resources
 
 * Official app website: <https://docs.joinpeertube.org/admin/remote-runners>
