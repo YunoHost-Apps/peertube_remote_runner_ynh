@@ -32,11 +32,12 @@ ram.runtime = "1000M"
 
     [install.path]
     type = "path"
-    default = "/example"
+    default = "/peertube_runner"
 
     [install.init_main_permission]
     type = "group"
-    default = "visitors"
+    default = "admins"
+    help = "It doesn't need to be accessible to anyone. Use 'admins'."
 
     [install.admin]
     type = "user"
@@ -44,6 +45,7 @@ ram.runtime = "1000M"
     [install.peertube_url]
     type = "string"
     help = "You need to include 'https://' in the URL"
+    default = "https://"
     
     [install.runner_token]
     type = "string"
