@@ -33,15 +33,12 @@ popd
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
-
-ynh_add_nginx_config
+ynh_script_progression --message="Adding peertube runner service $app..." --weight=1
 
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
 yunohost service add $app --description="Peertube remote runner" --log="/var/log/$app/$app.log"
-
 
 #=================================================
 # APP INITIAL CONFIGURATION
