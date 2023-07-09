@@ -20,11 +20,6 @@ Ceci est une fausse description des fonctionalités de l'app
 
 
 **Version incluse :** 1.0~ynh1
-
-## Captures d’écran
-
-![Capture d’écran de PeerTube Remote Runner](./doc/screenshots/example.jpg)
-
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://docs.joinpeertube.org/admin/remote-runners>

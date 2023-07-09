@@ -20,11 +20,6 @@ This is a dummy description of this app features
 
 
 **Shipped version:** 1.0~ynh1
-
-## Screenshots
-
-![Screenshot of PeerTube Remote Runner](./doc/screenshots/example.jpg)
-
 ## Documentation and resources
 
 * Official app website: <https://docs.joinpeertube.org/admin/remote-runners>
