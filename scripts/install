@@ -61,7 +61,7 @@ ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$ap
 #=================================================
 ynh_script_progression --message="Registering the runner on Peertube server..." --weight=1
 
-runner_id = ynh_string_random --length=5 --filter='0-9'
+runner_id=$(ynh_string_random --length=5 --filter='0-9')
 ynh_app_setting_set --app=$app --key='runner_id' --value=$runner_id
 
 pushd "$install_dir"
