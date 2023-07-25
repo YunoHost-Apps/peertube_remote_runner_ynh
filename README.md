@@ -19,7 +19,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 Remote runner to offload heavy workloads jobs (such as transcoding) from one or several (distant) Peertube server.
 
 
-**Shipped version:** 1.0~ynh1
+**Shipped version:** 1.0~ynh2
 ## Documentation and resources
 
 * Official app website: <https://docs.joinpeertube.org/admin/remote-runners>
