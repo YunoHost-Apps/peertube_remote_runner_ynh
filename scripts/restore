@@ -59,6 +59,15 @@ systemctl enable $app.service --quiet
 yunohost service add $app --description="Peertube remote runner" --log="/var/log/$app/$app.log"
 
 #=================================================
+# RUNNER REGISTRATION
+#=================================================
+
+pushd "$install_dir"
+  ynh_use_nodejs
+  ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
+popd
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
