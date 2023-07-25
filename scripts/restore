@@ -62,8 +62,6 @@ yunohost service add $app --description="Peertube remote runner" --log="/var/log
 # RUNNER REGISTRATION
 #=================================================
 
-ynh_app_setting_get --app=$app --key='runner_id'
-
 pushd "$install_dir"
   ynh_use_nodejs
   ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
