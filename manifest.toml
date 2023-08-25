@@ -16,7 +16,7 @@ admindoc = "https://docs.joinpeertube.org/maintain/tools#peertube-runner"
 code = "https://github.com/Chocobozzz/PeerTube/tree/develop/packages/peertube-runner"
 
 [integration]
-yunohost = ">= 11.1.21"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -28,8 +28,7 @@ ram.runtime = "1000M"
 [install]
     [install.domain]
     type = "domain"
-    full_domain = false
-
+    
     [install.path]
     type = "path"
     default = "/peertube_runner"
