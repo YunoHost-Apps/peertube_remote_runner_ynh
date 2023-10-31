@@ -25,7 +25,7 @@ Un *runner* distant pour décharger le travail intense en ressources (comme le t
 * Site officiel de l’app : <https://docs.joinpeertube.org/admin/remote-runners>
 * Documentation officielle de l’admin : <https://docs.joinpeertube.org/maintain/tools#peertube-runner>
 * Dépôt de code officiel de l’app : <https://github.com/Chocobozzz/PeerTube/tree/develop/packages/peertube-runner>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_peertube_remote_runner>
+* YunoHost Store: <https://apps.yunohost.org/app/peertube_remote_runner>
 * Signaler un bug : <https://github.com/YunoHost-Apps/peertube_remote_runner_ynh/issues>
 
 ## Informations pour les développeurs

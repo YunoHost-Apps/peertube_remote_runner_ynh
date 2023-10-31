@@ -25,7 +25,7 @@ Remote runner to offload heavy workloads jobs (such as transcoding) from one or 
 * Official app website: <https://docs.joinpeertube.org/admin/remote-runners>
 * Official admin documentation: <https://docs.joinpeertube.org/maintain/tools#peertube-runner>
 * Upstream app code repository: <https://github.com/Chocobozzz/PeerTube/tree/develop/packages/peertube-runner>
-* YunoHost documentation for this app: <https://yunohost.org/app_peertube_remote_runner>
+* YunoHost Store: <https://apps.yunohost.org/app/peertube_remote_runner>
 * Report a bug: <https://github.com/YunoHost-Apps/peertube_remote_runner_ynh/issues>
 
 ## Developer info
