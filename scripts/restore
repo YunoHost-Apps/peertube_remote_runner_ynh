@@ -27,14 +27,11 @@ ynh_script_progression --message="Restoring the data directory..." --weight=1
 ynh_restore_file --origin_path="$data_dir" --not_mandatory
 
 #=================================================
-# (RE)INSTALL NPM MODULE
+# INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Installing Peertube remote runner npm module..." --weight=1
+ynh_script_progression --message="Installing dependencies..."
 
-pushd "$install_dir"
-  ynh_use_nodejs
-  ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_npm install @peertube/peertube-runner
-popd
+ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATIONS
@@ -53,19 +50,9 @@ yunohost service add $app --description="Peertube remote runner" --log="/var/log
 #=================================================
 ynh_script_progression --message="Reloading NGINX web server and $app's service..." --weight=1
 
-# Typically you only have either $app or php-fpm but not both at the same time...
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
 
 ynh_systemd_action --service_name=nginx --action=reload
-
-#=================================================
-# RUNNER REGISTRATION
-#=================================================
-
-pushd "$install_dir"
-  ynh_use_nodejs
-  ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
-popd
 
 #=================================================
 # END OF SCRIPT
