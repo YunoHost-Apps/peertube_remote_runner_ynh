@@ -41,10 +41,6 @@ ynh_add_systemd_config
 yunohost service add $app --description="Peertube remote runner" --log="/var/log/$app/$app.log"
 
 #=================================================
-# APP INITIAL CONFIGURATION
-#=================================================
-
-#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # START SYSTEMD SERVICE
@@ -67,10 +63,10 @@ ynh_app_setting_set --app=$app --key='runner_id' --value=$runner_id
 pushd "$install_dir"
   ynh_use_nodejs
   ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
-
 popd
 
 #=================================================
 # END OF SCRIPT
 #=================================================
+
 ynh_script_progression --message="Installation of $app completed" --last
