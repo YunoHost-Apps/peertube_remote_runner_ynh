@@ -3,7 +3,7 @@ packaging_format = 2
 id = "peertube_remote_runner"
 name = "PeerTube Remote Runner"
 description.en = "Runner to offload high CPU/long job from Peertube main server"
-description.fr = "Runner pour décharger le travail intense en ressources CPU d'un serveur PeerTube"
+description.fr = "Runner pour externaliser les tâches coûteuses d'un serveur PeerTube principal"
 
 version = "1.0~ynh2"
 
