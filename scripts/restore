@@ -33,7 +33,7 @@ ynh_script_progression --message="Installing Peertube remote runner npm module..
 
 pushd "$install_dir"
   ynh_use_nodejs
-  ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_npm install @peertube/peertube-runner
+  ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_npm install @peertube/peertube-runner
 popd
 
 #=================================================
@@ -47,15 +47,6 @@ systemctl enable $app.service --quiet
 yunohost service add $app --description="Peertube remote runner" --log="/var/log/$app/$app.log"
 
 #=================================================
-# RUNNER REGISTRATION
-#=================================================
-
-pushd "$install_dir"
-  ynh_use_nodejs
-  ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
-popd
-
-#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
@@ -66,6 +57,15 @@ ynh_script_progression --message="Reloading NGINX web server and $app's service.
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
 
 ynh_systemd_action --service_name=nginx --action=reload
+
+#=================================================
+# RUNNER REGISTRATION
+#=================================================
+
+pushd "$install_dir"
+  ynh_use_nodejs
+  ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
+popd
 
 #=================================================
 # END OF SCRIPT
