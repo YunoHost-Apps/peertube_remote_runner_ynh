@@ -5,7 +5,7 @@ name = "PeerTube Remote Runner"
 description.en = "Remote runner to offload high CPU/long job (such as transcoding) from Peertube main server"
 description.fr = "Runner distant pour décharger le travail intense en ressources CPU (comme le transcodage) d'un serveur PeerTube principal"
 
-version = "1.0~ynh1"
+version = "1.0~ynh2"
 
 maintainers = ["Lapineige"]
 
