@@ -2,8 +2,8 @@ packaging_format = 2
 
 id = "peertube_remote_runner"
 name = "PeerTube Remote Runner"
-description.en = "Remote runner to offload high CPU/long job (such as transcoding) from Peertube main server"
-description.fr = "Runner distant pour décharger le travail intense en ressources CPU (comme le transcodage) d'un serveur PeerTube principal"
+description.en = "Runner to offload high CPU/long job from Peertube main server"
+description.fr = "Runner pour décharger le travail intense en ressources CPU d'un serveur PeerTube"
 
 version = "1.0~ynh2"
 
@@ -19,8 +19,11 @@ code = "https://github.com/Chocobozzz/PeerTube/tree/develop/packages/peertube-ru
 yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
+
 ldap = false
+
 sso = false
+
 disk = "500M"
 ram.build = "500M"
 ram.runtime = "1000M"
@@ -43,11 +46,15 @@ ram.runtime = "1000M"
     
     [install.peertube_url]
     type = "string"
+    ask.en = "Please enter Peertube URL"
+    ask.fr = "Veuillez entrer l'URL de Peertube"
     help = "You need to include 'https://' in the URL"
     default = "https://"
     
     [install.runner_token]
     type = "string"
+    ask.en = "Please enter the Peertube token"
+    ask.fr = "Veuillez entrer le jeton Peertube"
     help = "Token generated from Peertube web admin UI"
 
 [resources]

@@ -16,12 +16,12 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
+ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
 
 #=================================================
 # SPECIFIC MODIFICATIONS
 #=================================================
-# CHANGE REMOTE RUNNER URL INSIDE PEERTUBE
+# CHANGE REMOTE RUNNER URL INSIDE PEERTUBE
 #=================================================
 ynh_script_progression --message="Removing the runner from Peertube, registering it with the new URL and name..." --weight=1
 
@@ -38,7 +38,7 @@ popd
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
