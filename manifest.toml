@@ -46,11 +46,15 @@ ram.runtime = "1000M"
     
     [install.peertube_url]
     type = "string"
+    ask.en = "Please enter Peertube URL"
+    ask.fr = "Veuillez entrer l'URL de Peertube"
     help = "You need to include 'https://' in the URL"
     default = "https://"
     
     [install.runner_token]
     type = "string"
+    ask.en = "Please enter the Peertube token"
+    ask.fr = "Veuillez entrer le jeton Peertube"
     help = "Token generated from Peertube web admin UI"
 
 [resources]
