@@ -21,7 +21,7 @@ ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Installing Peertube remote runner npm module..." --weight=1
+ynh_script_progression --message="Installing PeerTube remote runner npm module..." --weight=1
 
 chown -R $app:www-data "$install_dir"
 
@@ -33,12 +33,12 @@ popd
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding peertube runner service $app..." --weight=1
+ynh_script_progression --message="Adding PeerTube runner service $app..." --weight=1
 
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
-yunohost service add $app --description="Peertube remote runner" --log="/var/log/$app/$app.log"
+yunohost service add $app --description="PeerTube remote runner" --log="/var/log/$app/$app.log"
 
 #=================================================
 # GENERIC FINALIZATION
