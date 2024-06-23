@@ -1,4 +1,4 @@
-The app url is `__DOMAIN____PATH__`. You will not need this in the future, the runner will contact Peertube directly.
+The app url is `__DOMAIN____PATH__`. You will not need this in the future, the runner will contact PeerTube directly.
 
 The app install dir is `__INSTALL_DIR__`.
 
