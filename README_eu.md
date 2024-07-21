@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # PeerTube Remote Runner YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/peertube_remote_runner.svg)](https://dash.yunohost.org/appci/app/peertube_remote_runner) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/peertube_remote_runner.svg)](https://ci-apps.yunohost.org/ci/apps/peertube_remote_runner/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.maintain.svg)
 
 [![Instalatu PeerTube Remote Runner YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=peertube_remote_runner)
 
@@ -19,7 +19,7 @@ EZ editatu eskuz.
 Remote runner to offload heavy workloads jobs (such as transcoding) from one or several (distant) Peertube server.
 
 
-**Paketatutako bertsioa:** 1.0~ynh2
+**Paketatutako bertsioa:** 0.0.18~ynh1
 ## Dokumentazioa eta baliabideak
 
 - Aplikazioaren webgune ofiziala: <https://docs.joinpeertube.org/admin/remote-runners>

@@ -5,7 +5,7 @@
 
 # YunoHost 上的 PeerTube Remote Runner
 
-[![集成程度](https://dash.yunohost.org/integration/peertube_remote_runner.svg)](https://dash.yunohost.org/appci/app/peertube_remote_runner) ![工作状态](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/peertube_remote_runner.svg)](https://ci-apps.yunohost.org/ci/apps/peertube_remote_runner/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.maintain.svg)
 
 [![使用 YunoHost 安装 PeerTube Remote Runner](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=peertube_remote_runner)
 
@@ -19,7 +19,7 @@
 Remote runner to offload heavy workloads jobs (such as transcoding) from one or several (distant) Peertube server.
 
 
-**分发版本：** 1.0~ynh2
+**分发版本：** 0.0.18~ynh1
 ## 文档与资源
 
 - 官方应用网站： <https://docs.joinpeertube.org/admin/remote-runners>

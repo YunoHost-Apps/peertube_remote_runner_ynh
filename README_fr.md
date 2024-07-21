@@ -5,7 +5,7 @@ Il NE doit PAS être modifié à la main.
 
 # PeerTube Remote Runner pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/peertube_remote_runner.svg)](https://dash.yunohost.org/appci/app/peertube_remote_runner) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/peertube_remote_runner.svg)](https://ci-apps.yunohost.org/ci/apps/peertube_remote_runner/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/peertube_remote_runner.maintain.svg)
 
 [![Installer PeerTube Remote Runner avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=peertube_remote_runner)
 
@@ -19,7 +19,7 @@ Il NE doit PAS être modifié à la main.
 Un *runner* distant pour décharger le travail intense en ressources (comme le transcodage) d'un serveur PeerTube principal distant.
 
 
-**Version incluse :** 1.0~ynh2
+**Version incluse :** 0.0.18~ynh1
 ## Documentations et ressources
 
 - Site officiel de l’app : <https://docs.joinpeertube.org/admin/remote-runners>
