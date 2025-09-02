@@ -6,7 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source _common.sh
+
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -26,7 +26,7 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
 ynh_script_progression --message="Removing the runner from Peertube, registering it with the new URL and name..." --weight=1
 
 pushd "$install_dir"
-  ynh_use_nodejs
+  #REMOVEME? ynh_use_nodejs
   ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$(hostname)
   ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$(hostname)
 popd

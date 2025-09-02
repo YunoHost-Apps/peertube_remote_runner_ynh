@@ -6,7 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source _common.sh
+
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -14,7 +14,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Installing dependencies..."
 
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
+#REMOVEME? ynh_exec_warn_less #REMOVEME? ynh_install_nodejs --#REMOVEME? nodejs_version=$nodejs_version
 
 #=================================================
 # APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
@@ -26,7 +26,7 @@ ynh_script_progression --message="Installing PeerTube remote runner npm module..
 chown -R $app:www-data "$install_dir"
 
 pushd "$install_dir"
-  ynh_use_nodejs
+  #REMOVEME? ynh_use_nodejs
   ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_npm install @peertube/peertube-runner
 popd
 
@@ -61,7 +61,7 @@ runner_id=$(ynh_string_random --length=5 --filter='0-9')
 ynh_app_setting_set --app=$app --key='runner_id' --value=$runner_id
 
 pushd "$install_dir"
-  ynh_use_nodejs
+  #REMOVEME? ynh_use_nodejs
   ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_node "$install_dir/node_modules/@peertube/peertube-runner" register --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
 popd
 

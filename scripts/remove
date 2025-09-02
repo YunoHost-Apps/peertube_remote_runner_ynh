@@ -6,7 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source _common.sh
+
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -37,7 +37,7 @@ ynh_remove_systemd_config
 ynh_script_progression --message="Removing Peertube remote runner npm module..." --weight=1
 
 pushd "$install_dir"
-  ynh_use_nodejs
+  #REMOVEME? ynh_use_nodejs
   ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production $ynh_npm uninstall @peertube/peertube-runner
 popd
 
