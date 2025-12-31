@@ -7,16 +7,14 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Unregistering the runner on Peertube server..."
 
-ynh_hide_warnings ynh_exec_as_app node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production node "$install_dir/node_modules/@peertube/peertube-runner" unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
+ynh_hide_warnings ynh_exec_as_app NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production node "$install_dir/node_modules/@peertube/peertube-runner" unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
 
 #=================================================
 # REMOVE SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Removing system configurations related to $app..."
 
-if ynh_hide_warnings yunohost service status $app >/dev/null
-then
-	ynh_script_progression "Removing $app service integration..."
+if ynh_hide_warnings yunohost service status $app >/dev/null; then
 	yunohost service remove $app
 fi
 
@@ -28,8 +26,7 @@ ynh_config_remove_systemd
 ynh_script_progression "Removing Peertube remote runner npm module..."
 
 pushd "$install_dir"
-
-  ynh_hide_warnings ynh_exec_as_app node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production npm uninstall @peertube/peertube-runner
+  ynh_hide_warnings ynh_exec_as_app NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production npm uninstall @peertube/peertube-runner
 popd
 
 #=================================================
