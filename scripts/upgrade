@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -11,8 +10,6 @@ ynh_script_progression "Stopping $app's systemd service..."
 ynh_systemctl --service=$app --action="stop"
 
 #=================================================
-# "REBUILD" THE APP (DEPLOY NEW SOURCES, RERUN NPM BUILD...)
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -21,7 +18,6 @@ if ynh_app_upstream_version_changed
 then
 	ynh_script_progression "Upgrading source files..."
 	pushd "$install_dir"
-
   		ynh_exec_as_app node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production npm update @peertube/peertube-runner
 	popd
 fi

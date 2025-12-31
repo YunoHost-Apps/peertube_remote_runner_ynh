@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -11,10 +10,7 @@ ynh_script_progression "Unregistering the runner on Peertube server..."
 ynh_hide_warnings ynh_exec_as_app node_load_PATH NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production node "$install_dir/node_modules/@peertube/peertube-runner" unregister --url $peertube_url --registration-token $runner_token --runner-name $app\_$runner_id
 
 #=================================================
-# REMOVE SYSTEM CONFIGURATIONS
-#=================================================
 # REMOVE SYSTEMD SERVICE
-
 #=================================================
 ynh_script_progression "Removing system configurations related to $app..."
 

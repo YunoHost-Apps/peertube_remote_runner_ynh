@@ -16,13 +16,12 @@ admindoc = "https://docs.joinpeertube.org/maintain/tools#peertube-runner"
 code = "https://github.com/Chocobozzz/PeerTube/tree/develop/packages/peertube-runner"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
 disk = "500M"
@@ -76,3 +75,7 @@ ram.runtime = "1000M"
     extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
     extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
     extras.yarn.packages = "yarn"
+
+    [resources.nodejs]
+    version = "18"
+    
