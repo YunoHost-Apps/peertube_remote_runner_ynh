@@ -7,7 +7,6 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Installing PeerTube remote runner npm module..."
 
-chown -R $app:www-data "$install_dir"
 pushd "$install_dir"
   ynh_hide_warnings ynh_exec_as_app NODE_CONFIG_DIR="$install_dir/config" NODE_ENV=production npm install @peertube/peertube-runner
 popd
