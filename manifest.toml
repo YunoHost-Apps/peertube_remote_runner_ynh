@@ -78,5 +78,5 @@ ram.runtime = "1000M"
     extras.yarn.packages = "yarn"
 
     [resources.nodejs]
-    version = "22"
+    version = "20"
     
