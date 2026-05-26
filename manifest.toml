@@ -64,17 +64,12 @@ ram.runtime = "1000M"
     [resources.install_dir]
 
     [resources.data_dir]
-    subdirs = ["storage"]
 
     [resources.permissions]
     main.url = "/"
 
     [resources.apt]
     packages = "ffmpeg"
-    
-    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
-    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    extras.yarn.packages = "yarn"
 
     [resources.nodejs]
     version = "22"
